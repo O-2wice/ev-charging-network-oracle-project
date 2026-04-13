@@ -2,7 +2,7 @@
 
 This repository contains the core Oracle deliverables for an EV Charging Network Management System. It models the full lifecycle of a charging session, from customer and vehicle registration through station usage, meter telemetry, maintenance tracking, and session audit history.
 
-The GitHub version is intentionally minimal: it keeps the main README, one ER diagram, the root SQL runner, and the Oracle SQL source files.
+The GitHub version is intentionally minimal: it keeps the main README, the root SQL runner, and the Oracle SQL source files.
 
 ## Overview
 
@@ -18,10 +18,6 @@ The project was designed as a database systems assignment with both logical mode
 - session audit logs for important business events
 
 This gives the project a realistic operational shape instead of a simple CRUD example, and it creates a good setting for partitioning, clustered storage, PL/SQL logic, and execution-plan analysis.
-
-## ER Diagram
-
-![ER diagram for the EV Charging Network Management System](docs/er_diagram_live.png)
 
 ## Project scope
 
@@ -78,9 +74,6 @@ Beyond table creation and loading, the project includes:
 ## Repository layout
 
 ```text
-docs/
-  er_diagram_live.png
-
 sql/
   00_run_all.sql
   01_create_tables.sql
@@ -138,7 +131,7 @@ The project is split into focused setup stages:
 
 ## What stays local
 
-The GitHub repo intentionally leaves out the broader local documentation set, generated screenshots, Word exports, editor settings, and saved execution logs. Those can still exist in the working folder, but `.gitignore` keeps the public repository focused on the core Oracle source plus the ER diagram used in this README.
+The GitHub repo intentionally leaves out the broader local documentation set, screenshots, pictures, Word exports, editor settings, and saved execution logs. Those can still exist in the working folder, but `.gitignore` keeps the public repository focused on the core Oracle source only.
 
 ## Notes
 

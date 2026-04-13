@@ -15,8 +15,3 @@
 # Keep the core Oracle project scripts.
 !/sql/
 !/sql/**
-
-# Keep one publishable ER diagram for the GitHub README.
-!/docs/
-/docs/**
-!/docs/er_diagram_live.png
