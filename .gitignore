@@ -1,4 +1,6 @@
 # Ignore everything by default.
+# That means local docs/, output_logs/, requirements.txt, editor files,
+# and generated assets stay out of the GitHub repo unless explicitly allowed below.
 *
 
 # Keep the git configuration for the repo itself.
