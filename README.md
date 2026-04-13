@@ -2,6 +2,12 @@
 
 This project implements an Oracle database for an EV charging network management system. It models customers, vehicles, charging stations, connectors, tariffs, charging sessions, meter readings, maintenance tickets, and session audit records.
 
+## ER Diagram
+
+![ER diagram of the EV Charging Network Oracle Project](docs/er_diagram_live.png)
+
+The schema is centered on `charging_sessions`, which connects the customer, vehicle, connector, and tariff dimensions to the main charging event. `meter_readings` stores session telemetry, `maintenance_tickets` captures operational problems at connector level, and `session_audit_log` records important business events created by the trigger and procedure logic.
+
 ## Project Summary
 
 - 9 relational tables
@@ -15,6 +21,13 @@ This project implements an Oracle database for an EV charging network management
 - 1 trigger
 - indexes and execution-plan analysis
 
+## Design Highlights
+
+- `charging_sessions` is the main high-volume transactional table and is partitioned by date to support time-based reporting and partition pruning
+- `stations` and `connectors` use clustered storage because they are frequently accessed together in infrastructure and utilization queries
+- synthetic test data is generated inside Oracle with PL/SQL rather than imported from CSV files
+- the project includes two complex reporting views, stored PL/SQL logic, and an execution-plan comparison showing the effect of indexing
+
 ## Main Tables
 
 - `customers`: customer master data
@@ -26,15 +39,6 @@ This project implements an Oracle database for an EV charging network management
 - `meter_readings`: session telemetry readings
 - `maintenance_tickets`: operational issue tracking
 - `session_audit_log`: audit history for important events
-
-## Main Database Features
-
-- synthetic test data generated inside Oracle with PL/SQL
-- partitioned large session table for time-based querying
-- clustered storage for station and connector access
-- reporting views for completed sessions and connector utilization
-- PL/SQL logic for session-cost calculation and unpaid-session review
-- execution-plan comparison showing the effect of indexing
 
 ## SQL Files
 
