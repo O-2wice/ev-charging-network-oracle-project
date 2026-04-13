@@ -1,0 +1,15 @@
+# Ignore everything by default.
+*
+
+# Keep the git configuration for the repo itself.
+!/.gitignore
+
+# Keep the main repository readme.
+!/README.md
+
+# Keep the root SQL*Plus wrapper.
+!/run_sqlplus_all.sql
+
+# Keep the core Oracle project scripts.
+!/sql/
+!/sql/**
