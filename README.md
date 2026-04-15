@@ -4,7 +4,9 @@ This project implements an Oracle database for an EV charging network management
 
 ## ER Diagram
 
-![ER diagram of the EV Charging Network Oracle Project](docs/er_diagram_live.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/O-2wice/ev-charging-network-oracle-project/main/docs/er_diagram_live.png" alt="ER diagram of the EV Charging Network Oracle Project" width="900">
+</p>
 
 The schema is centered on `charging_sessions`, which connects the customer, vehicle, connector, and tariff dimensions to the main charging event. `meter_readings` stores session telemetry, `maintenance_tickets` captures operational problems at connector level, and `session_audit_log` records important business events created by the trigger and procedure logic.
 
@@ -54,7 +56,6 @@ sql/
   07_execution_plans.sql
   08_grants.sql
   09_test_objects.sql
-  10_live_screenshot_queries.sql
 
 run_sqlplus_all.sql
 README.md
@@ -75,7 +76,3 @@ To rerun the verification queries separately:
 ```sql
 @sql/09_test_objects.sql
 ```
-
-## Repository
-
-GitHub repository: <https://github.com/O-2wice/ev-charging-network-oracle-project>
