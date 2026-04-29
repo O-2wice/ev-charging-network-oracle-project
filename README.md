@@ -76,3 +76,12 @@ To rerun the verification queries separately:
 ```sql
 @sql/09_test_objects.sql
 ```
+---
+
+## Related Repository
+
+The same EV Charging domain is also implemented as a MongoDB NoSQL extension in a separate repository:
+
+**[ev-charging-mongodb](https://github.com/O-2wice/ev-charging-mongodb)** — Oracle data migrated to MongoDB; 10 queries covering DDL, DML, and complex aggregation pipelines; Oracle vs MongoDB comparison.
+
+The two repositories are independent. The MongoDB repo migrates from this Oracle schema and references the same nine entities, but has no git dependency on this project.
